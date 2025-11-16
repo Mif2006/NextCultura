@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { X, Calendar, Users, CreditCard } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
-import axios from 'axios';
 
 
 interface BookingModalProps {
@@ -56,24 +55,34 @@ export default function BookingModal({ isOpen, onClose, roomType = 'Станда
     setLoading(true);
 
     try {
-        const { data } = await axios.post('http://localhost:5000/api/bookings', {
-            checkIn: formData.checkIn,
-            checkOut: formData.checkOut,
-            roomType: roomType,
-            guestsCount: formData.guestsCount
-        });
+      const { data, error } = await supabase
+        .from('bookings')
+        .insert({
+          guest_name: formData.guestName,
+          guest_email: formData.guestEmail,
+          guest_phone: formData.guestPhone,
+          room_type: roomType,
+          check_in: formData.checkIn,
+          check_out: formData.checkOut,
+          guests_count: formData.guestsCount,
+          total_price: totalPrice,
+          special_requests: formData.specialRequests,
+          payment_status: 'pending'
+        })
+        .select()
+        .single();
 
-        // You can handle the response data here, e.g., display a booking confirmation
-        console.log('Booking confirmation:', data);
-        setBookingId(data.id); // Save booking ID or response data as needed
-        setStep('payment'); // Switch to payment step
+      if (error) throw error;
+
+      setBookingId(data.id);
+      setStep('payment');
     } catch (error) {
-        console.error('Booking error:', error);
-        alert('Ошибка при создании бронирования. Попробуйте снова.');
+      console.error('Booking error:', error);
+      alert('Ошибка при создании бронирования. Попробуйте снова.');
     } finally {
-        setLoading(false);
+      setLoading(false);
     }
-};
+  };
 
   const handlePaymentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
