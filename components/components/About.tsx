@@ -47,15 +47,9 @@ export default function About() {
                 }`}
                 style={{ transitionDelay: '0.4s' }}
               >
-                Бутик-отель в самом сердце Гродно на знаковой улице Советская. Здесь история встречается с современностью.
-              </p>
-              <p
-                className={`transform transition-all duration-1000 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-                style={{ transitionDelay: '0.6s' }}
-              >
-                Мы создали пространство, где каждая деталь отражает культурное наследие города и стремление к эстетике.
+                Бутик Отель "Культура" — особое место в самом центре города Гродно, сочетающее старину здания 1860-х годов и современный уют.
+            
+                Окна выходят на главную пешеходную улицу, а с балконов открывается перспектива на площадь.
               </p>
               <p
                 className={`transform transition-all duration-1000 ${
@@ -63,14 +57,22 @@ export default function About() {
                 }`}
                 style={{ transitionDelay: '0.8s' }}
               >
-                Откройте для себя Гродно заново — прогулки по старинным улицам начинаются прямо у порога отеля.
+                Просторные номера со всеми условиями созданы для отдыха. В отеле с самого утра работает кафе с сытной и интересной кухней, напитками и десертами.
+              </p>
+              <p
+                className={`transform transition-all duration-1000 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: '1s' }}
+              >
+                В шаговой доступности — все главные достопримечательности города.
               </p>
             </div>
             <div
               className={`mt-8 md:mt-12 transform transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
-              style={{ transitionDelay: '1s' }}
+              style={{ transitionDelay: '1.2s' }}
             >
               <a
                 href="#rooms"
@@ -89,7 +91,7 @@ export default function About() {
           >
             <div className="w-full h-[300px] md:h-[600px] overflow-hidden transform hover:shadow-2xl transition-all duration-500 relative">
               <img
-                src="https://images.pexels.com/photos/3201921/pexels-photo-3201921.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="/Rooms/IMG_20251120_145712_373.jpg"
                 alt="Hotel Spa"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-[2000ms]"
               />

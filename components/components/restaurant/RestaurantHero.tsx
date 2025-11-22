@@ -5,7 +5,7 @@ export default function RestaurantHero() {
     <section id="home" className="relative h-screen flex items-end overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          src="/Resto/IMG_20251119_175624_816.jpg"
           alt="Restaurant"
           loading="eager"
           fetchPriority="high"

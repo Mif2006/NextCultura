@@ -75,7 +75,7 @@ export default function RestaurantAbout() {
             }`}
           >
             <img
-              src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/Resto/IMG_20251119_175605_550.jpg"
               alt="Restaurant Interior"
               className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700"
             />
