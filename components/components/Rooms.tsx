@@ -155,7 +155,7 @@ export default function Rooms() {
             >
               <div className="relative h-[300px] md:h-[500px] overflow-hidden mb-6 md:mb-8 transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
                 <img
-                  ref={el => (imageRefs.current[index] = el)}
+                  ref={el => { imageRefs.current[index] = el; }}
                   src={room.images[currentImageIndexes[index]]}
                   alt={`${room.title} ${currentImageIndexes[index] + 1}`}
                   className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110 cursor-pointer"

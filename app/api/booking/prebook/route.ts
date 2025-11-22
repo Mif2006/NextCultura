@@ -74,6 +74,9 @@ export async function POST(request: Request) {
     }
 
     // Do prebook via ETG
+    if (!book_hash) {
+      return NextResponse.json({ error: 'Unable to determine booking hash' }, { status: 422 });
+    }
     const { prebook } = await etgPrebook(book_hash);
 
     // Create local pending booking in Supabase (idempotency: create with client_provided_id if you want)
