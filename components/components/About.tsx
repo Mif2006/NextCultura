@@ -91,7 +91,7 @@ export default function About() {
           >
             <div className="w-full h-[300px] md:h-[600px] overflow-hidden transform hover:shadow-2xl transition-all duration-500 relative">
               <img
-                src="/Rooms/IMG_20251120_145712_373.jpg"
+                src="grodno.jpg"
                 alt="Hotel Spa"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-[2000ms]"
               />
